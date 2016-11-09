@@ -1,0 +1,33 @@
+<html ng-app="simpleExample">
+  <head>
+    <title>Simple Example - Angular Instant 2FA</title>
+  </head>
+  <body ng-controller="SimpleExampleController as ctrl">
+    <!--
+      Works like Stripe Checkout's simple integration, but calls the
+      function passed to stripe-checkout with the token object instead
+      of submitting a form.
+    -->
+    <div instant2fa="ctrl.onInstant2FAEvent" data-uri="https://hosted.instant2fa.com/verification-requests/vrq_fefbb5d7de9e4b2ca58c86e616165851"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <script src="../angular-instant2fa.js"></script>
+
+    <script>
+      angular.module("simpleExample", ["instant2fa"])
+        .controller("SimpleExampleController",function() {
+          this.onInstant2FAEvent = function(e) {
+            if (e.type === "verificationSuccess") {
+              // In a real world example, you would take this token and POST it to your server to complete
+              // the verification. For more information on how to do an Instant 2FA integration,
+              // visit our docs at:
+              //
+              // -----------> http://docs.instant2fa.com <------------
+              //
+              console.log("Verification success. Your verification response token is:", e.payload.token);
+            }
+          };
+        });
+    </script>
+  </body>
+</html>
