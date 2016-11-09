@@ -1,0 +1,31 @@
+{
+  "name": "angular-instant2fa",
+  "main": "angular-instant2fa.js",
+  "version": "0.0.1",
+  "description": "AngularJS wrapper around Instant2FA hosted pages",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clef/angular-instant2fa.git"
+  },
+  "author": "Jesse Pollak <jesse@getclef.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/clef/angular-instant2fa/issues"
+  },
+  "homepage": "https://github.com/clef/angular-instant2fa#readme",
+  "devDependencies": {
+    "eslint": "^3.3.1",
+    "serve-static": "^1.11.1",
+    "uglify-js": "^2.7.3",
+    "wdio-mocha-framework": "^0.4.0",
+    "wdio-spec-reporter": "0.0.3",
+    "webdriverio": "^4.2.7",
+    "http-server": "^0.9.0"
+  },
+  "scripts": {
+    "lint": "eslint angular-instant2fa.js test/*.js",
+    "development": "http-server -a localhost -p 8000 -c-1 ./",
+    "test": "echo No tests; exit 1;",
+    "uglify": "uglifyjs angular-instant2fa.js -m -o angular-instant2fa.min.js"
+  }
+}

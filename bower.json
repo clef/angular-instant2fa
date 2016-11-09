@@ -1,0 +1,11 @@
+{
+  "name": "angular-instant2fa",
+  "main": "angular-instant2fa.js",
+  "version": "0.0.1",
+  "authors": [
+    "Jesse Pollak <jesse@getclef.com>"
+  ],
+  "description": "AngularJS wrapper around Instant2FA hosted pages",
+  "moduleType": [ "globals" ],
+  "license": "MIT"
+}
